@@ -10,18 +10,7 @@ class calcResult : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_calc_result)
 
-        val firstValue = intent.getDoubleExtra("firstValue", 0.0)
-        val secondValue = intent.getDoubleExtra("secondValue", 0.0)
-        val operator = intent.extras.getString("operator", "none")
-        var result:Double
-
-        when (operator) {
-            "+" -> { result = firstValue + secondValue }
-            "-" -> { result = firstValue - secondValue }
-            "÷" -> { result = firstValue / secondValue }
-            "×" -> { result = firstValue * secondValue }
-            else -> result = 0.0
-        }
+        var result = intent.getDoubleExtra("result", 0.0)
 
         calcResultView.text = result.toString()
     }
